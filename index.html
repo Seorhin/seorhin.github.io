@@ -1,88 +1,369 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Seorhin Choi</title>
+
   <style>
     body {
-      font-family: Arial, sans-serif;
-      max-width: 850px;
-      margin: 60px auto;
-      line-height: 1.6;
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
       color: #222;
-      padding: 0 20px;
+      background: #fafafa;
+      line-height: 1.6;
     }
-    h1, h2 {
-      color: #111;
+
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #ddd;
+      padding: 28px 20px 18px 20px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
-    a {
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    header p {
+      margin: 8px auto 16px auto;
+      max-width: 800px;
+      color: #555;
+    }
+
+    nav a {
+      margin: 0 10px;
       color: #0056b3;
       text-decoration: none;
+      font-size: 0.95rem;
+      white-space: nowrap;
     }
-    .section {
-      margin-top: 40px;
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 950px;
+      margin: 40px auto;
+      padding: 0 22px;
+    }
+
+    section {
+      background: #ffffff;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 28px;
+      margin-bottom: 26px;
+    }
+
+    h2 {
+      margin-top: 0;
+      border-bottom: 1px solid #e5e5e5;
+      padding-bottom: 8px;
+      font-size: 1.45rem;
+    }
+
+    h3 {
+      margin-bottom: 4px;
+      font-size: 1.08rem;
+    }
+
+    .tagline {
+      font-size: 1.05rem;
+      color: #333;
+    }
+
+    .item {
+      margin-bottom: 20px;
+    }
+
+    .item:last-child {
+      margin-bottom: 0;
+    }
+
+    .meta {
+      color: #666;
+      font-size: 0.92rem;
+      margin-top: 0;
+    }
+
+    ul {
+      margin-top: 6px;
+    }
+
+    .keywords span {
+      display: inline-block;
+      background: #eef4ff;
+      color: #174a8b;
+      padding: 4px 9px;
+      margin: 3px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+    }
+
+    footer {
+      text-align: center;
+      color: #777;
+      padding: 30px 20px;
+      font-size: 0.9rem;
+    }
+
+    a {
+      color: #0056b3;
     }
   </style>
 </head>
 
 <body>
 
+<header>
   <h1>Seorhin Choi</h1>
-
-  <p>
-    I am a physics student interested in quantum states in surface-supported
-    lanthanide systems, combining multiplet calculations, spectroscopy, and
-    atomic-scale experiments.
+  <p class="tagline">
+    I study quantum states in surface-supported lanthanide systems by connecting
+    atomic-scale experiments, spectroscopy, multiplet calculations, and conceptual thinking in quantum physics.
   </p>
 
-  <p>
-    Email: choi.seorhin@qns.science <br>
-    CV: <a href="cv.pdf">Download CV</a>
-  </p>
+  <nav>
+    <a href="#research">Research</a>
+    <a href="#presentations">Presentations</a>
+    <a href="#ideas">Ideas</a>
+    <a href="#outreach">Outreach</a>
+    <a href="#teaching">Teaching</a>
+    <a href="#leadership">Leadership</a>
+    <a href="#cv">CV</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-  <div class="section">
+<main>
+
+  <section id="about">
+    <h2>About</h2>
+    <p>
+      I am interested in how quantum states emerge, are measured, and can be modeled in real physical systems.
+      My current work focuses on lanthanide atoms on surfaces, where local symmetry, crystal-field effects,
+      ligand-field contributions, and 4f–5d interactions shape the quantum level structure.
+    </p>
+
+    <div class="keywords">
+      <span>Lanthanide magnetism</span>
+      <span>Multiplet calculations</span>
+      <span>XMCD</span>
+      <span>ESR-STM</span>
+      <span>Quantum materials</span>
+      <span>Quantum foundations</span>
+    </div>
+  </section>
+
+  <section id="research">
     <h2>Research</h2>
-    <p>
-      My current research focuses on understanding the quantum level structure
-      of lanthanide atoms on surfaces. I use multiplet calculations, crystal-field
-      and ligand-field models, and experimental constraints from XAS, XMCD, and
-      ESR-STM measurements.
-    </p>
-  </div>
 
-  <div class="section">
-    <h2>Previous Research Experience</h2>
-    <p>
-      Before my current work, I gained experience in an ion-trap quantum computing
-      laboratory, where I worked on AOM and PID control systems, and in an STM
-      laboratory, where I assisted surface preparation and basic STM/STS measurements.
-    </p>
-  </div>
+    <div class="item">
+      <h3>Current Research: Multiplet Calculations and Synchrotron XMCD</h3>
+      <p class="meta">Graduate research</p>
+      <p>
+        My current research investigates the quantum level structure of surface-supported lanthanide atoms.
+        I use multiplet calculations with crystal-field and ligand-field models, constrained by spectroscopic
+        measurements such as XAS, XMCD, and ESR-STM.
+      </p>
+      <p>
+        A central question in my work is how the 4f electronic structure, local symmetry, and possible 5d
+        contributions determine magnetic anisotropy and spin dynamics in atomic-scale quantum systems.
+      </p>
+    </div>
 
-  <div class="section">
-    <h2>Projects & Notes</h2>
-    <p>
-      I am also interested in conceptual questions in quantum physics, including
-      the role of paths, braiding, and topology in understanding quantum states
-      and particle exchange.
-    </p>
-  </div>
+    <div class="item">
+      <h3>Internship: Trapped-Ion Quantum Computing</h3>
+      <p class="meta">Early research experience</p>
+      <p>
+        I worked in a trapped-ion quantum computing laboratory, where I gained experience with experimental
+        control systems, including AOM and PID control. This experience shaped my understanding of precision
+        control in quantum platforms.
+      </p>
+    </div>
 
-  <div class="section">
-    <h2>Teaching & Outreach</h2>
-    <p>
-      I have experience in academic mentoring and science communication. I am
-      also developing outreach materials, including a board-game-based introduction
-      to STM and atomic-scale quantum systems.
-    </p>
-  </div>
+    <div class="item">
+      <h3>Internship: Scanning Tunneling Microscopy</h3>
+      <p class="meta">Early research experience</p>
+      <p>
+        I also gained experience in an STM laboratory, assisting with surface preparation and basic STM/STS
+        measurements. This introduced me to atomic-scale surface physics and later motivated my interest in
+        surface-supported spin systems.
+      </p>
+    </div>
+  </section>
 
-  <div class="section">
+  <section id="presentations">
+    <h2>Presentations</h2>
+
+    <div class="item">
+      <h3>Korean Physical Society Oral Presentation</h3>
+      <p class="meta">Oral presentation</p>
+      <p>
+        Presented research related to experimental physics and spectroscopy.
+      </p>
+    </div>
+
+    <div class="item">
+      <h3>ICAE Poster Presentation</h3>
+      <p class="meta">Poster presentation</p>
+      <p>
+        Presented research in an international academic setting.
+      </p>
+    </div>
+
+    <div class="item">
+      <h3>University Poster Presentation</h3>
+      <p class="meta">Poster presentation</p>
+      <p>
+        Presented research progress within the university research community.
+      </p>
+    </div>
+  </section>
+
+  <section id="ideas">
+    <h2>Ideas & Conceptual Work</h2>
+
+    <div class="item">
+      <h3>From States to Paths: Anyons and Quantum Exchange</h3>
+      <p class="meta">Philosophy of physics / upcoming presentation</p>
+      <p>
+        I am developing a philosophy of physics project on whether state-based descriptions are sufficient
+        for analyzing quantum systems, especially in the case of anyonic exchange and braiding.
+      </p>
+      <p>
+        The project examines how path-dependent topological structures may carry physical significance beyond
+        initial and final quantum states.
+      </p>
+    </div>
+
+    <div class="item">
+      <h3>Mathematical Formalism for Quantum Mechanics</h3>
+      <p class="meta">Physics philosophy study group</p>
+      <p>
+        I presented on the mathematical formalism of quantum mechanics in a philosophy of physics study group,
+        focusing on how mathematical structures shape the interpretation of quantum theory.
+      </p>
+    </div>
+  </section>
+
+  <section id="outreach">
+    <h2>Outreach & Science Communication</h2>
+
+    <div class="item">
+      <h3>Women in Science Panel Moderator</h3>
+      <p class="meta">STM 25</p>
+      <p>
+        Moderated a Women in Science panel discussion, facilitating conversation on research careers,
+        scientific community, and representation in science.
+      </p>
+    </div>
+
+    <div class="item">
+      <h3>STM Monopoly</h3>
+      <p class="meta">Science outreach board game</p>
+      <p>
+        Developed an educational board game designed to introduce STM concepts and laboratory research culture
+        in an accessible format.
+      </p>
+    </div>
+
+    <div class="item">
+      <h3>Schrödinger Cat Party</h3>
+      <p class="meta">Educational board game / introduced at a science education conference</p>
+      <p>
+        Developed an educational board game inspired by quantum mechanics. The project was introduced at a
+        science education conference as an example of creative science communication.
+      </p>
+    </div>
+  </section>
+
+  <section id="teaching">
+    <h2>Teaching</h2>
+
+    <div class="item">
+      <h3>Independent Academic Mentoring</h3>
+      <p class="meta">Private tutoring experience, 7 years</p>
+      <p>
+        I have taught and mentored more than 40 students over seven years, focusing on concept-based learning
+        in mathematics and physics. My current teaching includes linear algebra using Friedberg's textbook.
+      </p>
+    </div>
+
+    <div class="item">
+      <h3>General Physics Laboratory Teaching Assistant</h3>
+      <p class="meta">Teaching assistant experience</p>
+      <p>
+        Assisted undergraduate students in experimental physics, including laboratory procedures, data analysis,
+        and scientific reporting.
+      </p>
+    </div>
+
+    <div class="item">
+      <h3>Linear Algebra Study Group</h3>
+      <p class="meta">Planned academic study group</p>
+      <p>
+        I am organizing a study group focused on linear algebra and its applications to physics.
+      </p>
+    </div>
+  </section>
+
+  <section id="leadership">
+    <h2>Leadership & Teamwork</h2>
+
+    <div class="item">
+      <h3>Film Direction with an International Team</h3>
+      <p class="meta">Creative leadership</p>
+      <p>
+        Directed a film project with a multinational team, coordinating diverse perspectives and shaping them
+        into a coherent narrative.
+      </p>
+    </div>
+
+    <div class="item">
+      <h3>Quantum Art Project</h3>
+      <p class="meta">Interdisciplinary collaboration</p>
+      <p>
+        I am preparing a quantum-art competition project that connects quantum concepts with artistic expression.
+      </p>
+    </div>
+
+    <div class="item">
+      <h3>Fencing Club</h3>
+      <p class="meta">Team activity</p>
+      <p>
+        Served as a fencing club officer and received a team medal in fencing.
+      </p>
+    </div>
+  </section>
+
+  <section id="cv">
+    <h2>CV</h2>
+    <p>
+      A full CV will be available here.
+    </p>
+    <p>
+      <a href="cv.pdf">Download CV</a>
+    </p>
+  </section>
+
+  <section id="contact">
     <h2>Contact</h2>
     <p>
       Email: choi.seorhin@qns.science
     </p>
-  </div>
+  </section>
+
+</main>
+
+<footer>
+  © Seorhin Choi
+</footer>
 
 </body>
 </html>
