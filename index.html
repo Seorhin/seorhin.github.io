@@ -6,37 +6,28 @@
 <title>Seorhin Choi</title>
 <style>
   :root {
-    --bg: #fafaf8;
-    --bg2: #f2f1ed;
-    --text: #1a1a18;
-    --muted: #6b6b65;
+    --bg: #f9f8f5;
+    --text: #1c1c1a;
+    --muted: #72726a;
     --accent: #2a5c8f;
-    --accent-light: #e8f0f8;
-    --border: #ddddd8;
-    --tag-bg: #ececea;
-    --tag-text: #3a3a36;
+    --border: #e2e1da;
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg: #181816;
-      --bg2: #222220;
-      --text: #eeeee8;
-      --muted: #9a9a92;
-      --accent: #6fa8d6;
-      --accent-light: #1a2d3f;
-      --border: #333330;
-      --tag-bg: #2a2a28;
-      --tag-text: #c8c8c0;
+      --bg: #161614;
+      --text: #e4e4de;
+      --muted: #96968c;
+      --accent: #7ab3e0;
+      --border: #2c2c28;
     }
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
   body {
     font-family: 'Georgia', serif;
     background: var(--bg);
     color: var(--text);
+    font-size: 15px;
     line-height: 1.75;
-    font-size: 17px;
   }
   a { color: var(--accent); text-decoration: none; }
   a:hover { text-decoration: underline; }
@@ -47,479 +38,698 @@
     top: 0;
     background: var(--bg);
     border-bottom: 1px solid var(--border);
-    z-index: 100;
-    padding: 0 2rem;
+    z-index: 200;
   }
   nav ul {
     list-style: none;
     display: flex;
-    gap: 2rem;
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 0.9rem 0;
     flex-wrap: wrap;
-  }
-  nav a {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    font-size: 13px;
-    letter-spacing: 0.04em;
-    color: var(--muted);
-    text-transform: uppercase;
-  }
-  nav a:hover { color: var(--text); text-decoration: none; }
-
-  /* LAYOUT */
-  .container {
-    max-width: 760px;
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 1.5rem;
   }
-  section {
-    padding: 4rem 0;
-    border-bottom: 1px solid var(--border);
+  nav ul li a {
+    display: block;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 11.5px;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 0.8rem 0.8rem 0.8rem 0;
+    margin-right: 0.5rem;
   }
-  section:last-child { border-bottom: none; }
+  nav ul li a:hover { color: var(--text); text-decoration: none; }
 
-  /* HEADER */
-  #hero {
-    padding: 5rem 0 4rem;
-    border-bottom: 1px solid var(--border);
+  .page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 4rem;
   }
-  #hero h1 {
-    font-size: 2.4rem;
+
+  /* TOP: photo + intro + columns */
+  .top {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 2.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 2rem;
+    align-items: start;
+  }
+  @media (max-width: 600px) {
+    .top { grid-template-columns: 1fr; }
+    .top-photo { max-width: 120px; }
+  }
+  .top-photo img {
+    width: 100%;
+    display: block;
+    border-radius: 3px;
+  }
+  .top-right h1 {
+    font-size: 2rem;
     font-weight: normal;
     letter-spacing: -0.02em;
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.2rem;
   }
-  #hero .subtitle {
+  .affil {
     font-family: 'Helvetica Neue', Arial, sans-serif;
-    font-size: 14px;
+    font-size: 13px;
     color: var(--muted);
-    letter-spacing: 0.03em;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
   }
-  #hero p {
-    font-size: 18px;
-    max-width: 620px;
-    color: var(--text);
-    line-height: 1.8;
-  }
-  .tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 1.5rem;
-  }
-  .tag {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    font-size: 12px;
-    background: var(--tag-bg);
-    color: var(--tag-text);
-    padding: 4px 12px;
-    border-radius: 20px;
-    letter-spacing: 0.02em;
-  }
-
-  /* SECTION HEADINGS */
-  h2 {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    font-size: 11px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 2.5rem;
-  }
-  h3 {
-    font-size: 20px;
-    font-weight: normal;
-    margin-bottom: 0.3rem;
-    letter-spacing: -0.01em;
-  }
-
-  /* RESEARCH */
-  .research-main {
-    margin-bottom: 3rem;
-  }
-  .research-main .label {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    font-size: 12px;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--accent);
+  .intro p {
+    font-size: 15px;
+    line-height: 1.82;
     margin-bottom: 0.6rem;
   }
-  .research-main h3 {
-    font-size: 22px;
-    margin-bottom: 1rem;
+  .intro p:last-child { margin-bottom: 0; }
+  .top-links {
+    margin-top: 0.9rem;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 13px;
   }
-  .research-main p {
-    margin-bottom: 1rem;
-    color: var(--text);
+  .top-links a { color: var(--muted); margin-right: 1rem; }
+  .top-links a:hover { color: var(--text); }
+
+  /* MAIN COLUMNS */
+  .columns {
+    display: grid;
+    grid-template-columns: 2fr 1.2fr 1.2fr;
+    gap: 2.5rem;
+    align-items: start;
+  }
+  @media (max-width: 760px) {
+    .columns { grid-template-columns: 1fr; }
   }
 
-  .past-research {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-    margin-top: 2rem;
+  /* COLUMN SECTIONS */
+  .col-sec {
+    margin-bottom: 2rem;
   }
-  @media (max-width: 560px) {
-    .past-research { grid-template-columns: 1fr; }
+  .col-sec:last-child { margin-bottom: 0; }
+
+  .sec-label {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text);
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.3rem;
+    border-bottom: 1px solid var(--border);
   }
-  .past-card {
-    background: var(--bg2);
+
+  /* CARDS for research & outreach */
+  .cards {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+  .card {
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 3px;
+    transition: background 0.12s;
+  }
+  .card:hover { background: color-mix(in srgb, var(--accent) 7%, var(--bg)); }
+  .card-thumb {
+    width: 64px;
+    height: 48px;
+    object-fit: cover;
+    border-radius: 2px;
+    flex-shrink: 0;
+    background: var(--border);
+  }
+  .card-text-thumb {
+    width: 64px;
+    height: 48px;
+    border-radius: 2px;
+    flex-shrink: 0;
+    background: color-mix(in srgb, var(--accent) 10%, var(--bg));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
     border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 1.25rem;
   }
-  .past-card h4 {
-    font-size: 15px;
-    font-weight: normal;
-    margin-bottom: 0.5rem;
+  .card-info {
+    font-size: 13.5px;
+    line-height: 1.45;
   }
-  .past-card p {
+  .card-info .card-title {
+    color: var(--accent);
+    display: block;
+    margin-bottom: 0.1rem;
+  }
+  .card-info .card-sub {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 11.5px;
+    color: var(--muted);
+  }
+
+  /* PLAIN LISTS */
+  .plain-list { list-style: none; }
+  .plain-list li {
+    padding: 0.45rem 0;
+    border-bottom: 1px solid var(--border);
     font-size: 14px;
+    line-height: 1.55;
+  }
+  .plain-list li:first-child { padding-top: 0; }
+  .plain-list li:last-child { border-bottom: none; padding-bottom: 0; }
+  .badge {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 9.5px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid color-mix(in srgb, var(--accent) 40%, transparent);
+    padding: 1px 5px;
+    border-radius: 2px;
+    margin-right: 0.4rem;
+    white-space: nowrap;
+  }
+  .plain-list .venue {
+    display: block;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 11.5px;
+    color: var(--muted);
+    margin-top: 0.1rem;
+  }
+  .pub-note {
+    margin-top: 0.8rem;
+    padding-top: 0.8rem;
+    border-top: 1px solid var(--border);
+    font-size: 13px;
     color: var(--muted);
     line-height: 1.6;
   }
-
-  /* PRESENTATIONS */
-  .pres-item {
-    padding: 1.2rem 0;
-    border-bottom: 1px solid var(--border);
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 1.2rem;
-    align-items: start;
-  }
-  .pres-item:last-child { border-bottom: none; }
-  .pres-badge {
+  .pub-label {
     font-family: 'Helvetica Neue', Arial, sans-serif;
-    font-size: 11px;
-    letter-spacing: 0.04em;
+    font-size: 10px;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    background: var(--accent-light);
-    color: var(--accent);
-    padding: 3px 10px;
-    border-radius: 4px;
-    white-space: nowrap;
-    margin-top: 3px;
-  }
-  .pres-item h4 {
-    font-size: 16px;
-    font-weight: normal;
-    margin-bottom: 0.2rem;
-  }
-  .pres-item p {
-    font-size: 14px;
     color: var(--muted);
+    margin-bottom: 0.3rem;
   }
 
   /* IDEAS */
   .idea-block {
     border-left: 2px solid var(--accent);
-    padding-left: 1.5rem;
-    margin-bottom: 2rem;
+    padding-left: 0.9rem;
+    margin-bottom: 0;
   }
-  .idea-block h3 {
-    font-size: 18px;
-    margin-bottom: 0.5rem;
+  .idea-block .idea-title {
+    font-size: 13.5px;
+    font-weight: normal;
+    margin-bottom: 0.4rem;
+    line-height: 1.45;
+    color: var(--accent);
+    cursor: pointer;
   }
+  .idea-block .idea-title:hover { text-decoration: underline; }
   .idea-block p {
-    font-size: 15px;
-    color: var(--muted);
-    line-height: 1.7;
-  }
-
-  /* OUTREACH & TEACHING */
-  .item {
-    margin-bottom: 2rem;
-  }
-  .item h3 {
-    font-size: 17px;
-    margin-bottom: 0.3rem;
-  }
-  .item p {
-    font-size: 15px;
-    color: var(--muted);
-    line-height: 1.7;
-  }
-  .item .meta {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    font-size: 12px;
-    color: var(--muted);
-    margin-bottom: 0.3rem;
-    letter-spacing: 0.03em;
-  }
-
-  /* FOOTER */
-  footer {
-    padding: 3rem 0;
-    font-family: 'Helvetica Neue', Arial, sans-serif;
     font-size: 13px;
     color: var(--muted);
+    line-height: 1.7;
   }
-  footer a { color: var(--muted); }
-  footer a:hover { color: var(--text); }
+
+  /* TEACHING */
+  .teach-item { margin-bottom: 1rem; }
+  .teach-item:last-child { margin-bottom: 0; }
+  .teach-meta {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 10.5px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.15rem;
+  }
+  .teach-item p {
+    font-size: 13.5px;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+
+  /* MODAL */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: 500;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+  }
+  .modal-overlay.open { display: flex; }
+  .modal {
+    background: var(--bg);
+    border-radius: 6px;
+    max-width: 620px;
+    width: 100%;
+    max-height: 88vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.18);
+  }
+  .modal-img {
+    width: 100%;
+    display: block;
+    border-radius: 6px 6px 0 0;
+    max-height: 260px;
+    object-fit: cover;
+  }
+  .modal-body { padding: 1.6rem 1.8rem 2rem; }
+  .modal-tag {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.35rem;
+  }
+  .modal-title {
+    font-size: 1.2rem;
+    font-weight: normal;
+    letter-spacing: -0.01em;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+  }
+  .modal-body p {
+    font-size: 14.5px;
+    line-height: 1.82;
+    color: var(--text);
+    margin-bottom: 0.85rem;
+  }
+  .modal-body p:last-child { margin-bottom: 0; }
+  .modal-body em { font-style: italic; }
+  .modal-sub {
+    margin-top: 1.3rem;
+    padding-top: 1.3rem;
+    border-top: 1px solid var(--border);
+  }
+  .modal-sub-title {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.9rem;
+  }
+  .modal-sub-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+  }
+  @media (max-width: 480px) { .modal-sub-grid { grid-template-columns: 1fr; } }
+  .modal-sub-grid strong {
+    display: block;
+    font-size: 13.5px;
+    font-weight: normal;
+    color: var(--text);
+    margin-bottom: 0.25rem;
+  }
+  .modal-sub-grid p {
+    font-size: 13px !important;
+    color: var(--muted) !important;
+    line-height: 1.62 !important;
+    margin-bottom: 0 !important;
+  }
+  .modal-photo-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.7rem;
+    margin-top: 1.1rem;
+  }
+  @media (max-width: 480px) { .modal-photo-pair { grid-template-columns: 1fr; } }
+  .modal-photo-pair figure img { width: 100%; display: block; border-radius: 3px; }
+  .modal-photo-pair figcaption {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 11px; color: var(--muted); margin-top: 0.3rem;
+  }
+  .modal-close {
+    position: absolute;
+    top: 0.8rem; right: 0.9rem;
+    background: none; border: none;
+    font-size: 1.3rem;
+    color: var(--muted);
+    cursor: pointer;
+    padding: 0.2rem 0.4rem;
+    line-height: 1;
+  }
+  .modal-close:hover { color: var(--text); }
+
+  footer {
+    margin-top: 2.5rem;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 11.5px;
+    color: var(--muted);
+  }
 </style>
 </head>
 <body>
 
 <nav>
   <ul>
+    <li><a href="#top">Home</a></li>
     <li><a href="#research">Research</a></li>
     <li><a href="#presentations">Presentations</a></li>
-    <li><a href="#ideas">Ideas</a></li>
-    <li><a href="#outreach">Outreach & Teaching</a></li>
-    <li><a href="#cv">CV</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#outreach">Beyond the lab</a></li>
+    <li><a href="#teaching">Teaching</a></li>
+    <li><a href="mailto:choi.seorhin@qns.science">Contact</a></li>
   </ul>
 </nav>
 
-<div class="container">
+<div class="page" id="top">
 
-  <section id="hero">
-    <h1>Seorhin Choi</h1>
-    <p class="subtitle">M.S. Researcher · IBS Center for Quantum Nanoscience · Ewha Womans University</p>
-    <p>
-      I study how quantum states are structured in real physical systems — specifically in lanthanide atoms 
-      on surfaces, where atomic-scale symmetry, crystal-field effects, and subtle electron interactions 
-      shape magnetic properties that we can directly measure and model.
-      My work sits at the intersection of synchrotron spectroscopy and multiplet calculations: 
-      I take experimental data and build theoretical models that account for physics the simpler models miss.
-    </p>
-    <div class="tags">
-      <span class="tag">Lanthanide magnetism</span>
-      <span class="tag">Multiplet calculations</span>
-      <span class="tag">XAS / XMCD</span>
-      <span class="tag">Bayesian optimization</span>
-      <span class="tag">Quantum materials</span>
+  <!-- TOP SECTION -->
+  <div class="top">
+    <div class="top-photo">
+      <img src="photo.jpg" alt="Seorhin Choi">
     </div>
-  </section>
-
-  <section id="research">
-    <h2>Research</h2>
-
-    <div class="research-main">
-      <div class="label">Current · IBS Center for Quantum Nanoscience</div>
-      <h3>Identifying the quantum level structure of surface-supported lanthanides</h3>
-      <p>
-        Lanthanide atoms on surfaces are promising candidates for atomic-scale qubits: 
-        their 4f electrons are well shielded, giving them long coherence times, 
-        and modern scanning probe techniques let us address individual atoms directly. 
-        But to use these systems deliberately, we need to understand precisely 
-        <em>what quantum states they occupy</em> — and that turns out to be harder than it looks.
-      </p>
-      <p>
-        My main project focuses on Er atoms on MgO. The conventional approach to modeling 
-        the crystal field — treating the surrounding atoms as simple point charges — 
-        worked for the oxygen top site but failed badly for the bridge site. 
-        At the bridge site, the predicted magnetic anisotropy was inverted compared to experiment, 
-        and ESR-STM showed a fast Rabi frequency where the model predicted driving should be difficult.
-        Something important was missing from the picture.
-      </p>
-      <p>
-        My contribution was to extend the model by introducing partially occupied 5d configurations, 
-        allowing for hopping between the 4f-only ground configuration and states with ligand-to-5d 
-        charge transfer. This changes the effective crystal field in a way that simple electrostatic 
-        scaling cannot. I then used Bayesian optimization to fit the free parameters to the 
-        experimental g-tensor values from ESR-STM. The result: the new model correctly reproduces 
-        the magnetic anisotropy direction at the bridge site, and predicts which field geometry 
-        enables ESR driving — in agreement with experiment. I am now extending this modeling approach to other lanthanide atoms: Ho, Tm, and Dy.
-      </p>
-      <p> 
-        Beyond the main Er project, I have been involved in synchrotron experiments. 
-        In one, focused on valence-electron magnetism in lanthanides on superconductors, 
-        I participated in the experiment and am now analyzing the XAS/XMCD data using IGOR Pro 
-        with sum rules — motivated in part by the possibility that 5d contributions play a role here too. 
-        In the other, aimed at probing the element-specific spin dynamics in CoTaS₂ 
-        (looking for the differences between bulk magnetic properties and surface
-observations using total fluorescence and total electron yield mode.), I joined the experiments 
-        at SOLEIL, France and the Pohang Light Source, South Korea.
-      </p>
+    <div class="top-right">
+      <h1>Seorhin Choi</h1>
+      <p class="affil">M.S. Researcher · IBS Center for Quantum Nanoscience · Seoul</p>
+      <div class="intro">
+        <p>I am an M.S. researcher at IBS Center for Quantum Nanoscience, Seoul,
+        working on lanthanide atoms on surfaces. My work centers on multiplet
+        calculations and modeling to interpret XAS/XMCD and ESR-STM data,
+        and I am gradually expanding my interests toward lanthanide-based quantum
+        materials through beamtime experiments.</p>
+        <p>I also care about what happens outside the lab — science outreach,
+        philosophy of physics, and finding ways to connect physics to people
+        who aren't already inside it.</p>
+      </div>
+      <div class="top-links">
+        <a href="cv.pdf">CV</a>
+        <a href="mailto:choi.seorhin@qns.science">choi.seorhin@qns.science</a>
+      </div>
     </div>
+  </div>
 
-    <div style="border-top: 1px solid var(--border); padding-top: 2rem;">
-      <h3 style="font-size: 16px; color: var(--muted); margin-bottom: 1.2rem; font-family: 'Helvetica Neue', Arial, sans-serif; font-weight: normal; letter-spacing: 0.02em;">Earlier research (undergraduate internship)</h3>
-      <div class="past-research">
-        <div class="past-card">
-          <h4>Scanning tunneling microscopy</h4>
-          <p>
-            Investigated YPc₂ molecular spin qubits on Cu(111) at IBS QNS. 
-            Learned surface preparation (sputtering, annealing, molecular deposition) 
-            and low-temperature UHV-STM/STS measurements. 
-            This experience introduced me to atomic-scale surface physics and motivated 
-            my current interest in surface-supported spin systems.
-          </p>
-        </div>
-        <div class="past-card">
-          <h4>Trapped-ion quantum computing</h4>
-          <p>
-            Built a TTL pulse-controlled AOM and PID-based laser stabilization system 
-            at Ewha's trapped-ion lab. Diagnosed a signal distortion problem using 
-            Fourier analysis and corrected it by replacing a high-pass filter with 
-            Gaussian pulse convolution. The resulting system was operated via a GUI 
-            I wrote in MATLAB, and improved laser stability compared to the previous setup.
-          </p>
+  <!-- THREE COLUMNS -->
+  <div class="columns">
+
+    <!-- COLUMN 1: Research -->
+    <div>
+      <div class="col-sec" id="research">
+        <div class="sec-label">Research</div>
+        <div class="cards">
+          <div class="card" onclick="openModal('research')">
+            <img class="card-thumb" src="fig_orbital.png" alt="Research">
+            <div class="card-info">
+              <span class="card-title">Lanthanide atoms on surfaces</span>
+              <span class="card-sub">Multiplet calculations · XAS/XMCD · ESR-STM</span>
+            </div>
+          </div>
+          <div class="card" onclick="openModal('stm')">
+            <img class="card-thumb" src="stm_intern.jpg" alt="STM intern">
+            <div class="card-info">
+              <span class="card-title">YPc₂ molecular spin qubits</span>
+              <span class="card-sub">UHV-STM/STS · Surface preparation · IBS QNS</span>
+            </div>
+          </div>
+          <div class="card" onclick="openModal('iontrap')">
+            <img class="card-thumb" src="iontrap_lab.jpg" alt="Ion trap lab">
+            <div class="card-info">
+              <span class="card-title">Trapped-ion quantum computing</span>
+              <span class="card-sub">Laser control · PID · MATLAB · Ewha</span>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <section id="presentations">
-    <h2>Presentations</h2>
-
-    <div class="pres-item">
-      <span class="pres-badge">Oral</span>
-      <div>
-        <h4>Identifying the quantum level structure of Er atoms on MgO using machine learning-assisted multiplet calculations</h4>
-        <p>Korean Physical Society Spring Meeting — Daejeon, April 2026</p>
+      <div class="col-sec" id="outreach">
+        <div class="sec-label">Beyond the lab</div>
+        <div class="cards">
+          <div class="card" onclick="openModal('games')">
+            <img class="card-thumb" src="stm_monopoly_play.png" alt="Board games">
+            <div class="card-info">
+              <span class="card-title">Quantum board games</span>
+              <span class="card-sub">STM Monopoly · Schrödinger's Cat Party</span>
+            </div>
+          </div>
+          <div class="card" onclick="openModal('art')">
+            <div class="card-text-thumb">🎨</div>
+            <div class="card-info">
+              <span class="card-title">Quantum coherence art</span>
+              <span class="card-sub">Installation · East Asian ink painting · In progress</span>
+            </div>
+          </div>
+          <div class="card" onclick="openModal('phil')">
+            <div class="card-text-thumb">∮</div>
+            <div class="card-info">
+              <span class="card-title">Philosophy of physics</span>
+              <span class="card-sub">Anyon braiding · Time and Chance translation</span>
+            </div>
+          </div>
+          <div class="card" onclick="openModal('women')">
+            <img class="card-thumb" src="women_in_science.jpg" alt="Women in Science">
+            <div class="card-info">
+              <span class="card-title">Women in Science</span>
+              <span class="card-sub">Session moderator · IBS STM'25</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="pres-item">
-      <span class="pres-badge">Poster</span>
-      <div>
-        <h4>Identifying the quantum level structure of Er atoms on MgO using machine learning-assisted multiplet calculations</h4>
-        <p>International Conference on Advanced Electromaterials (ICAE 2025) — Jeju, November 2025</p>
+    <!-- COLUMN 2: Presentations -->
+    <div>
+      <div class="col-sec" id="presentations">
+        <div class="sec-label">Presentations</div>
+        <ul class="plain-list">
+          <li>
+            <span class="badge">Oral</span>
+            Identifying the quantum level structure of Er atoms on MgO using machine learning-assisted multiplet calculations
+            <span class="venue">KPS Spring Meeting, Daejeon · April 2026</span>
+          </li>
+          <li>
+            <span class="badge">Poster</span>
+            Identifying the quantum level structure of Er atoms on MgO using machine learning-assisted multiplet calculations
+            <span class="venue">ICAE 2025, Jeju · November 2025</span>
+          </li>
+          <li>
+            <span class="badge">Upcoming</span>
+            From states to paths: anyon braiding and the limits of state-based analysis
+            <span class="venue">Korean Society for Philosophy of Science · July 2026</span>
+          </li>
+        </ul>
+        <div class="pub-note">
+          <div class="pub-label">Publication</div>
+          Yaowu Liu*, Dasom Choi, Stefano Reale, Jeongmin Oh, <strong>Seorhin Choi</strong>,
+          Fang Lei, We-hyo Seo, Andreas J. Heinrich, Soo-hyon Phark, and Fabio Donati.
+          "All-electrical coherent control of a single 4f electron spin."
+          <em>Manuscript in preparation.</em>
+        </div>
       </div>
     </div>
 
-    <div class="pres-item">
-      <span class="pres-badge">Upcoming</span>
-      <div>
-        <h4>From states to paths: anyon braiding and the limits of state-based analysis</h4>
-        <p>Korean Society for Philosophy of Science Annual Meeting — July 2026</p>
+    <!-- COLUMN 3: Teaching -->
+    <div>
+      <div class="col-sec" id="teaching">
+        <div class="sec-label">Teaching</div>
+        <div class="teach-item">
+          <div class="teach-meta">TA · Ewha Womans University · 2025–present</div>
+          <p>General Physics Laboratory — guide undergraduates through experimental setup, measurements, and data analysis.</p>
+        </div>
+        <div class="teach-item">
+          <div class="teach-meta">Private Tutor · 2020–present</div>
+          <p>Mentored 40+ students in high school mathematics and physics. Currently teaching linear algebra using Friedberg, Insel & Spence.</p>
+        </div>
       </div>
     </div>
 
-    <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border);">
-      <h3 style="font-size: 15px; font-weight: normal; margin-bottom: 0.5rem;">Publication</h3>
-      <p style="font-size: 14px; color: var(--muted); line-height: 1.7;">
-        Yaowu Liu*, Dasom Choi, Stefano Reale, Jeongmin Oh, <strong>Seorhin Choi</strong>, Fang Lei, 
-        We-hyo Seo, Andreas J. Heinrich, Soo-hyon Phark, and Fabio Donati. 
-        "All-electrical coherent control of a single 4f electron spin." 
-        <em>Manuscript in preparation.</em>
-      </p>
-    </div>
-  </section>
+  </div><!-- end columns -->
 
-  <section id="ideas">
-    <h2>Ideas</h2>
-    <p style="color: var(--muted); font-size: 15px; margin-bottom: 2rem;">
-      Research questions I am thinking about outside of my main project.
-    </p>
-
-    <div class="idea-block">
-      <h3>From states to paths: anyon exchange and the limits of synchronic analysis</h3>
-      <p>
-        Is analyzing the physical world through synchronic states —
-        snapshots assigned to moments in time — a sufficient foundational strategy?
-        The case of anyons puts pressure on that assumption. Two exchange processes can share 
-        identical initial and final states, yet differ in physical outcome because their 
-        trajectories in configuration space belong to different homotopy classes. 
-        The difference that matters is not captured by any synchronic state description; 
-        it lives in the global topological structure of worldlines across time.
-        This suggests that trajectories, rather than states, may need to serve as the 
-        basic unit of analysis — and that taking this seriously also makes dimensionality 
-        a physically substantive parameter, since the homotopy structure of exchange paths 
-        is dimension-dependent.
-        Upcoming presentation at the Korean Society for Philosophy of Science, July 2026.
-      </p>
-    </div>
-
-
-  </section>
-
-  <section id="outreach">
-    <h2>Outreach & Teaching</h2>
-
-    <div class="item">
-      <div class="meta">Science communication · Board games</div>
-      <h3>STM Monopoly</h3>
-      <p>
-        I designed an educational board game introducing scanning tunneling microscopy concepts and 
-        laboratory culture. It was featured at a Harvard–MIT open house and presented at the 
-        2025 Korean Society for Science Education meeting. The game sparked the idea for 
-        Science Arcade — a game-based outreach program that QNS has since developed as part of 
-        its official outreach activities. I have continued contributing to the program, 
-        including through Schrödinger's Cat Party.
-        <em>Rulebook coming soon — will be available to download and play.</em>
-      </p>
-    </div>
-
-    <div class="item">
-      <div class="meta">Science communication · Board games</div>
-      <h3>Schrödinger's Cat Party</h3>
-      <p>
-        A party game built around quantum mechanics concepts — superposition, entanglement, 
-        and measurement — expressed through bluffing and psychological gameplay. 
-        Part of the ongoing Science Arcade outreach program at QNS.
-      </p>
-    </div>
-
-    <div class="item">
-      <div class="meta">Leadership · STM'25 Conference</div>
-      <h3>Session moderator, Women in Science</h3>
-      <p>
-        Volunteered to moderate a panel discussion in Women in Science at the IBS conference on STM'25.
-        I prepared the questions, aiming for ones concrete enough to get past 
-        general reflection — how support for women in science differs across countries, 
-        what soft skills matter more than expected, what they would tell someone earlier in their career. 
-        The goal was a conversation that anyone in the room, including myself, 
-        could actually take something away from.
-      </p>
-    </div>
-
-    <div style="border-top: 1px solid var(--border); padding-top: 2rem; margin-top: 1rem;">
-      <div class="item">
-        <div class="meta">Teaching · Ewha Womans University · 2025–present</div>
-        <h3>Teaching assistant, General Physics Laboratory</h3>
-        <p>
-          Guide undergraduates through experimental setup, measurements, and data analysis. 
-          Developed grading rubrics and evaluated lab reports.
-        </p>
-      </div>
-
-      <div class="item">
-        <div class="meta">Tutoring · 2020–present</div>
-        <h3>Private tutor, physics and mathematics</h3>
-        <p>
-          Mentored 40+ students in high school, middle school mathematics and physics. 
-          Currently teaching linear algebra using Friedberg, Insel & Spence.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section id="cv">
-    <h2>CV</h2>
-    <p style="margin-bottom: 1.2rem; color: var(--muted); font-size: 15px;">
-      Full academic CV with education, honors, and complete research experience.
-    </p>
-    <a href="cv.pdf" style="
-      display: inline-block;
-      font-family: 'Helvetica Neue', Arial, sans-serif;
-      font-size: 14px;
-      letter-spacing: 0.04em;
-      border: 1px solid var(--border);
-      padding: 0.6rem 1.4rem;
-      border-radius: 4px;
-      color: var(--text);
-    ">Download CV (PDF)</a>
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <p style="font-size: 16px;">
-      <a href="mailto:choi.seorhin@qns.science">choi.seorhin@qns.science</a>
-    </p>
-  </section>
-
-  <footer>
-    <p>© Seorhin Choi</p>
-  </footer>
-
+  <footer>© Seorhin Choi</footer>
 </div>
+
+<!-- MODALS -->
+<div class="modal-overlay" id="modal-overlay" onclick="closeModalOutside(event)">
+  <div class="modal" id="modal-box">
+    <button class="modal-close" onclick="closeModal()">×</button>
+    <img class="modal-img" id="modal-img" src="" alt="" style="display:none">
+    <div class="modal-body" id="modal-body"></div>
+  </div>
+</div>
+
+<script>
+const modals = {
+  research: {
+    img: 'fig_ligandfield.png',
+    tag: 'Current · IBS Center for Quantum Nanoscience',
+    title: 'Modeling the quantum level structure of surface-supported lanthanides',
+    body: `
+      <p>Lanthanide atoms on surfaces are promising candidates for atomic-scale qubits:
+      their 4f electrons are well shielded, giving them long coherence times,
+      and modern scanning probe techniques let us address individual atoms directly.
+      But to use these systems deliberately, we need to understand precisely
+      <em>what quantum states they occupy</em> — and that turns out to be harder than it looks.</p>
+      <p>My main project focuses on Er atoms on MgO. The conventional point-charge model
+      worked for the oxygen top site but failed badly for the bridge site — the predicted
+      magnetic anisotropy was inverted, and ESR-STM showed a fast Rabi frequency where
+      the model predicted driving should be difficult.
+      I extended the model by introducing partially occupied 5d configurations and used
+      Bayesian optimization to fit the parameters to experimental g-tensor values.
+      The new model correctly reproduces the magnetic anisotropy and the conditions for ESR driving.</p>
+      <p>I am now extending this approach to Ho, Tm, and Dy. I am also involved in two
+      synchrotron campaigns at SOLEIL: one on valence-electron magnetism in lanthanides
+      on superconductors, where I am analyzing XAS/XMCD data with sum rules;
+      and one on element-specific spin polarization in CoTaS₂, where I participated
+      in experiments at SOLEIL and the Pohang Light Source.</p>`
+  },
+  anyons: {
+    img: null,
+    tag: 'Philosophy of physics',
+    title: 'From states to paths: anyon exchange and the limits of synchronic analysis',
+    body: `
+      <p>Is analyzing the physical world through synchronic states —
+      snapshots assigned to moments in time — a sufficient foundational strategy?
+      The case of anyons puts pressure on that assumption. Two exchange processes can share
+      identical initial and final states, yet differ in physical outcome because their
+      trajectories in configuration space belong to different homotopy classes.
+      The difference that matters is not captured by any synchronic state description;
+      it lives in the global topological structure of worldlines across time.</p>
+      <p>This suggests that trajectories, rather than states, may need to serve as the
+      basic unit of analysis — and that taking this seriously also makes dimensionality
+      a physically substantive parameter, since the homotopy structure of exchange paths
+      is dimension-dependent.</p>
+      <p>Upcoming presentation at the Korean Society for Philosophy of Science, July 2026.</p>`
+  },
+  games: {
+    img: 'stm_monopoly.png',
+    tag: 'Science communication · Games',
+    title: 'Quantum board games',
+    body: `
+      <p>I designed STM Monopoly, an educational board game introducing scanning tunneling
+      microscopy concepts and laboratory culture. Featured at a Harvard–MIT open house and
+      presented at the 2025 Korean Society for Science Education meeting. The game sparked
+      the idea for Science Arcade — a game-based outreach program that QNS has since
+      developed as part of its official outreach activities.</p>
+      <p>I have continued contributing through Schrödinger's Cat Party —
+      a party game built around quantum mechanics concepts: superposition, entanglement,
+      and measurement, expressed through bluffing and psychological gameplay.</p>
+      <p><em>Rulebooks coming soon — will be available to download and play.</em></p>
+      <div class="modal-photo-pair">
+        <figure>
+          <img src="stm_monopoly_board.png" alt="STM Monopoly board">
+          <figcaption>STM Monopoly — game board</figcaption>
+        </figure>
+        <figure>
+          <img src="schrodinger_cat.jpg" alt="Schrödinger's Cat Party">
+          <figcaption>Schrödinger's Cat Party — character art</figcaption>
+        </figure>
+      </div>`
+  },
+  art: {
+    img: null,
+    tag: 'Science communication · In progress',
+    title: 'Quantum coherence — installation and ink painting',
+    body: `
+      <p>A work in progress exploring quantum coherence through installation art
+      and traditional East Asian ink painting.</p>
+      <p>More soon.</p>`
+  },
+  stm: {
+    img: null,
+    tag: 'Undergraduate research · IBS Center for Quantum Nanoscience',
+    title: 'YPc₂ molecular spin qubits on Cu(111)',
+    body: `
+      <p>As an undergraduate intern at IBS QNS, I investigated YPc₂ molecular spin qubits
+      on Cu(111) surfaces using scanning tunneling microscopy. I learned surface preparation
+      techniques — sputtering, annealing, and molecular deposition — and participated in
+      low-temperature UHV-STM/STS measurements and data acquisition.</p>
+      <p>This experience introduced me to atomic-scale surface physics and the experimental
+      culture of a scanning probe lab, and directly motivated my current interest in
+      surface-supported spin systems.</p>`
+  },
+  iontrap: {
+    img: 'iontrap_lab.jpg',
+    tag: 'Undergraduate research · Ewha Womans University',
+    title: 'Laser control systems for trapped-ion quantum computing',
+    body: `
+      <p>At Ewha's trapped-ion quantum computing lab, I built a TTL pulse-controlled AOM
+      and PID-based laser stabilization system for optical experiments. The goal was to
+      characterize and optimize the laser beam amplitude as a function of TTL pulse shape
+      for stable ion qubit control.</p>
+      <p>During the project I encountered a signal distortion problem — the photodiode
+      output showed a sinusoidal shape instead of a clean rectangle. Fourier analysis
+      revealed amplification of high-frequency components due to the circuit's RC constant.
+      I resolved this by replacing the high-pass filter with a Gaussian pulse convolution,
+      which brought the output close to the target rectangular shape.</p>
+      <p>The final system — a GUI-operated MATLAB interface with PID laser stabilization —
+      improved laser stability compared to the previous setup and enabled generation of
+      pulsed lasers at the required frequencies and durations.</p>
+      <div class="modal-photo-pair">
+        <figure>
+          <img src="iontrap_lab.jpg" alt="Ion trap optical table">
+          <figcaption>Optical table setup</figcaption>
+        </figure>
+        <figure>
+          <img src="iontrap_setup.png" alt="AOM setup with labels">
+          <figcaption>AOM and amplifier setup</figcaption>
+        </figure>
+      </div>`
+  },
+  phil: {
+    img: null,
+    tag: 'Philosophy of physics',
+    title: 'Thinking at the boundary of physics and philosophy',
+    body: `
+      <p>My interest in the foundations of quantum mechanics grew out of studying physics
+      and philosophy together at Ewha. I am drawn to questions that sit at the boundary —
+      where the formalism of physics runs into problems that are genuinely philosophical.</p>
+      <p>I am currently preparing a talk for the Korean Society for Philosophy of Science
+      on anyon exchange and whether synchronic state descriptions are sufficient to capture
+      all physical facts. Two exchange processes can share identical initial and final states,
+      yet differ in outcome because their trajectories in configuration space belong to
+      different homotopy classes — a difference no state-based description can capture.
+      This suggests trajectories, rather than states, may need to serve as the basic unit
+      of analysis, and makes dimensionality a physically substantive parameter.</p>
+      <p>I am also contributing to the Korean translation of David Albert's
+      <em>Time and Chance</em> as a scientific consultant, helping bridge the gap between
+      the physics and the philosophical argument in the text.</p>`
+  },
+  women: {
+    img: 'women_in_science.jpg',
+    tag: 'Leadership · IBS STM\'25 Conference',
+    title: 'Session moderator, Women in Science',
+    body: `
+      <p>Volunteered to moderate a panel of five established researchers at the IBS
+      conference on STM'25. I prepared the questions independently, aiming for ones
+      concrete enough to get past general reflection — how support for women in science
+      differs across countries, what soft skills matter more than expected, what they
+      would tell someone earlier in their career.</p>
+      <p>The goal was a conversation that anyone in the room, including myself,
+      could actually take something away from.</p>`
+  }
+};
+
+function openModal(key) {
+  const m = modals[key];
+  const img = document.getElementById('modal-img');
+  const body = document.getElementById('modal-body');
+  if (m.img) { img.src = m.img; img.style.display = 'block'; }
+  else { img.style.display = 'none'; }
+  body.innerHTML = `<div class="modal-tag">${m.tag}</div><h2 class="modal-title">${m.title}</h2>${m.body}`;
+  document.getElementById('modal-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('modal-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function closeModalOutside(e) {
+  if (e.target === document.getElementById('modal-overlay')) closeModal();
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+</script>
+
 </body>
 </html>
