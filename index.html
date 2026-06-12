@@ -157,23 +157,23 @@
   }
   .card:hover { background: color-mix(in srgb, var(--accent) 7%, var(--bg)); }
   .card-thumb {
-    width: 64px;
-    height: 48px;
+    width: 100px;
+    height: 75px;
     object-fit: cover;
-    border-radius: 2px;
+    border-radius: 3px;
     flex-shrink: 0;
     background: var(--border);
   }
   .card-text-thumb {
-    width: 64px;
-    height: 48px;
-    border-radius: 2px;
+    width: 100px;
+    height: 75px;
+    border-radius: 3px;
     flex-shrink: 0;
     background: color-mix(in srgb, var(--accent) 10%, var(--bg));
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     border: 1px solid var(--border);
   }
   .card-info {
@@ -448,7 +448,7 @@
             </div>
           </div>
           <div class="card" onclick="openModal('synchrotron')">
-            <div class="card-text-thumb" style="font-size:1.1rem; font-family:'Helvetica Neue',Arial,sans-serif; color:var(--accent);">XAS</div>
+            <img class="card-thumb" src="synchrotron.png" alt="Synchrotron experiments">
             <div class="card-info">
               <span class="card-title">Synchrotron experiments</span>
               <span class="card-sub">XAS/XMCD · SOLEIL · Pohang Light Source</span>
@@ -481,11 +481,11 @@
               <span class="card-sub">STM Monopoly · Schrödinger's Cat Party</span>
             </div>
           </div>
-          <div class="card" onclick="openModal('art')">
-            <div class="card-text-thumb">🎨</div>
+          <div class="card" onclick="openModal('women')">
+            <img class="card-thumb" src="women_in_science.jpg" alt="Women in Science">
             <div class="card-info">
-              <span class="card-title">Quantum coherence art</span>
-              <span class="card-sub">Installation · East Asian ink painting · In progress</span>
+              <span class="card-title">Women in Science</span>
+              <span class="card-sub">Session moderator · IBS STM'25</span>
             </div>
           </div>
           <div class="card" onclick="openModal('phil')">
@@ -495,11 +495,11 @@
               <span class="card-sub">Anyon braiding · Time and Chance translation</span>
             </div>
           </div>
-          <div class="card" onclick="openModal('women')">
-            <img class="card-thumb" src="women_in_science.jpg" alt="Women in Science">
+          <div class="card" onclick="openModal('art')">
+            <div class="card-text-thumb">🎨</div>
             <div class="card-info">
-              <span class="card-title">Women in Science</span>
-              <span class="card-sub">Session moderator · IBS STM'25</span>
+              <span class="card-title">Quantum coherence art</span>
+              <span class="card-sub">Installation · East Asian ink painting · In progress</span>
             </div>
           </div>
         </div>
@@ -547,7 +547,11 @@
         </div>
         <div class="teach-item">
           <div class="teach-meta">Private Tutor · 2020–present</div>
-          <p>Mentored 30+ students in middle/high school mathematics and physics. Currently teaching linear algebra using Friedberg, Insel & Spence.</p>
+          <p>Mentored 40+ students in high school mathematics and physics. Currently teaching linear algebra using Friedberg, Insel & Spence.</p>
+        </div>
+        <div class="teach-item">
+          <div class="teach-meta">Mathematics Instructor · Lim Math, Cheonan · 2022</div>
+          <p>Taught middle school mathematics in small-group classroom settings.</p>
         </div>
       </div>
     </div>
@@ -588,7 +592,7 @@ const modals = {
       <p>I am now extending this approach to other lanthanides — Ho, Tm, and Dy.</p>`
   },
   synchrotron: {
-    img: null,
+    img: 'synchrotron.png',
     tag: 'Current · SOLEIL · Pohang Light Source',
     title: 'Synchrotron experiments on lanthanide-based quantum materials',
     body: `
@@ -635,7 +639,7 @@ const modals = {
       <p><em>Rulebooks coming soon — will be available to download and play.</em></p>
       <div class="modal-photo-pair">
         <figure>
-          <img src="stm_monopoly_board_2.png" alt="STM Monopoly board">
+          <img src="stm_monopoly_board.png" alt="STM Monopoly board">
           <figcaption>STM Monopoly — game board</figcaption>
         </figure>
         <figure>
