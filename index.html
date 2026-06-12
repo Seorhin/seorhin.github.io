@@ -443,8 +443,15 @@
           <div class="card" onclick="openModal('research')">
             <img class="card-thumb" src="fig_orbital.png" alt="Research">
             <div class="card-info">
-              <span class="card-title">Lanthanide atoms on surfaces</span>
-              <span class="card-sub">Multiplet calculations · XAS/XMCD · ESR-STM</span>
+              <span class="card-title">Lanthanide atoms on MgO surfaces</span>
+              <span class="card-sub">Multiplet calculations · ESR-STM</span>
+            </div>
+          </div>
+          <div class="card" onclick="openModal('synchrotron')">
+            <div class="card-text-thumb" style="font-size:1.1rem; font-family:'Helvetica Neue',Arial,sans-serif; color:var(--accent);">XAS</div>
+            <div class="card-info">
+              <span class="card-title">Synchrotron experiments</span>
+              <span class="card-sub">XAS/XMCD · SOLEIL · Pohang Light Source</span>
             </div>
           </div>
           <div class="card" onclick="openModal('stm')">
@@ -468,7 +475,7 @@
         <div class="sec-label">Beyond the lab</div>
         <div class="cards">
           <div class="card" onclick="openModal('games')">
-            <img class="card-thumb" src="stm_monopoly.png" alt="Board games">
+            <img class="card-thumb" src="stm_monopoly_play.png" alt="Board games">
             <div class="card-info">
               <span class="card-title">Quantum board games</span>
               <span class="card-sub">STM Monopoly · Schrödinger's Cat Party</span>
@@ -522,10 +529,10 @@
         </ul>
         <div class="pub-note">
           <div class="pub-label">Publication</div>
-          Yaowu Liu*, Dasom Choi, Stefano Reale, Jeongmin Oh, <strong>Seorhin Choi</strong>,
-          Fang Lei, We-hyo Seo, Andreas J. Heinrich, Soo-hyon Phark, and Fabio Donati.
+          Yaowu Liu*, Dasom Choi*, Stefano Reale, Jeongmin Oh, <strong>Seorhin Choi</strong>,
+          Fang Lei, We-hyo Seo, Arzhang Ardavan, Andreas J. Heinrich, Soo-hyon Phark, and Fabio Donati.
           "All-electrical coherent control of a single 4f electron spin."
-          <em>Manuscript in preparation.</em>
+          <em>Submitted to Nature Nanotechnology (2026).</em>
         </div>
       </div>
     </div>
@@ -540,7 +547,7 @@
         </div>
         <div class="teach-item">
           <div class="teach-meta">Private Tutor · 2020–present</div>
-          <p>Mentored 40+ students in high school mathematics and physics. Currently teaching linear algebra using Friedberg, Insel & Spence.</p>
+          <p>Mentored 30+ students in middle/high school mathematics and physics. Currently teaching linear algebra using Friedberg, Insel & Spence.</p>
         </div>
       </div>
     </div>
@@ -564,7 +571,7 @@ const modals = {
   research: {
     img: 'fig_ligandfield.png',
     tag: 'Current · IBS Center for Quantum Nanoscience',
-    title: 'Modeling the quantum level structure of surface-supported lanthanides',
+    title: 'Lanthanide atoms on MgO surfaces',
     body: `
       <p>Lanthanide atoms on surfaces are promising candidates for atomic-scale qubits:
       their 4f electrons are well shielded, giving them long coherence times,
@@ -578,11 +585,21 @@ const modals = {
       I extended the model by introducing partially occupied 5d configurations and used
       Bayesian optimization to fit the parameters to experimental g-tensor values.
       The new model correctly reproduces the magnetic anisotropy and the conditions for ESR driving.</p>
-      <p>I am now extending this approach to Ho, Tm, and Dy. I am also involved in two
-      synchrotron campaigns at SOLEIL: one on valence-electron magnetism in lanthanides
-      on superconductors, where I am analyzing XAS/XMCD data with sum rules;
-      and one on element-specific spin polarization in CoTaS₂, where I participated
-      in experiments at SOLEIL and the Pohang Light Source.</p>`
+      <p>I am now extending this approach to other lanthanides — Ho, Tm, and Dy.</p>`
+  },
+  synchrotron: {
+    img: null,
+    tag: 'Current · SOLEIL · Pohang Light Source',
+    title: 'Synchrotron experiments on lanthanide-based quantum materials',
+    body: `
+      <p>Alongside the MgO project, I take part in several synchrotron beamtime experiments
+      using XAS and XMCD to probe the magnetic and electronic structure of lanthanide-based materials.</p>
+      <p>One ongoing campaign focuses on valence-electron magnetism in lanthanide atoms on
+      superconductors, where I am analyzing the data using sum rules to investigate how
+      coupling to Cooper pairs affects the lanthanide's magnetic state.</p>
+      <p>I have also participated in experiments probing the crystal-field structure of
+      Kagome spin ice in HoAgGe, and in a measurement of element-specific spin polarization
+      in Co₁/₃TaS₂.</p>`
   },
   anyons: {
     img: null,
