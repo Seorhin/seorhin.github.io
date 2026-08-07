@@ -427,9 +427,8 @@
         qubits. My work sits between experiment and theory: I build multiplet and
         crystal-field models in Quanty and fit them to XAS/XMCD and ESR-STM data
         with Bayesian optimization.</p>
-        <p>Alongside this, I take part in synchrotron beamtime experiments — including
-        a measurement of element-specific spin polarization in the frustrated
-        triangular-lattice magnet Co₁/₃TaS₂ — and my interests have gradually
+        <p>Alongside this, I take part in synchrotron beamtime experiments including
+        a measurement of frustrated magnets and my interests have gradually
         broadened from single-atom qubits toward quantum magnetic materials more
         generally.</p>
         <p>I also care about what happens outside the lab — science outreach,
@@ -500,7 +499,7 @@
             </div>
           </div>
           <div class="card" onclick="openModal('anyons')">
-            <img class="card-thumb" src="anyon.jpg" alt="Philosophy of anyons">
+            <img class="card-thumb" src="anyon.JPG" alt="Philosophy of anyons">
             <div class="card-info">
               <span class="card-title">Philosophy of anyons</span>
               <span class="card-sub">Synchronic states vs. exchange paths</span>
@@ -600,12 +599,10 @@ const modals = {
       g-factor (g<sub>zz</sub> ≈ 9.6). I built a hierarchy of three multiplet models in
       <strong>Quanty</strong> to find out why. Refitting the point-charge model's own
       parameters with <strong>Bayesian optimization</strong> against the measured g-factor
-      only converges by pushing them to unphysical limits — evidence that the model itself,
+      only converges by pushing them to unphysical limits. This is evidence that the model itself,
       not just its parameters, is missing something. I then extended it by introducing
       partial 5d occupation on the adatom: first through hopping to an open ligand bath,
-      then through a charge-conserving 4f+5d+6s active space that I chose as the final model
-      because it keeps the adatom's electron count fixed rather than exchanging charge with
-      an undefined external bath.</p>
+      then through a charge-conserving 4f+5d+6s active space.</p>
       <p>With that model, the predicted ground state flips from in-plane to out-of-plane
       projected, correctly reproducing both the measured g-tensor and a normal-incidence
       XMCD signal the original model had underestimated. I am now extending the same
@@ -619,14 +616,12 @@ const modals = {
       <p>Alongside the MgO project, I take part in several synchrotron beamtime experiments
       using XAS and XMCD to probe the magnetic and electronic structure of lanthanide-based materials.</p>
       <p>One ongoing campaign focuses on valence-electron magnetism in lanthanide atoms on
-      superconductors, where I am analyzing the data using sum rules to investigate how
-      coupling to Cooper pairs affects the lanthanide's magnetic state.</p>
-      <p>I have also participated in experiments probing the crystal-field structure of
-      Kagome spin ice in HoAgGe, and in a measurement of element-specific spin polarization
+      superconductors, where I am analyzing the data using sum rules to examine the role of the 5d electrons in the valence magnetism and how coupling to Cooper pairs affects it.</p>
+      <p>I have also participated in XMCD experiments on Kagome spin ice in HoAgGe, and in a measurement of element-specific spin polarization
       in Co₁/₃TaS₂.</p>`
   },
   anyons: {
-    img: 'anyon.jpg',
+    img: 'anyon.JPG',
     tag: 'Philosophy of physics',
     title: 'From states to paths: anyon exchange and the limits of synchronic analysis',
     body: `
@@ -636,7 +631,7 @@ const modals = {
       identical initial and final states, yet differ in physical outcome because their
       trajectories in configuration space belong to different homotopy classes.
       The difference that matters is not captured by any synchronic state description;
-      it lives in the global topological structure of worldlines across time.</p>
+      it lives in the global topological structure.</p>
       <p>This suggests that paths, rather than states, may need to serve as the
       basic unit of analysis — and that taking this seriously also makes dimensionality
       a physically substantive parameter, since the homotopy structure of exchange paths
