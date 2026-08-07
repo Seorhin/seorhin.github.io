@@ -230,11 +230,16 @@
   }
   .pub-label {
     font-family: 'Helvetica Neue', Arial, sans-serif;
-    font-size: 10px;
+    font-size: 10.5px;
+    font-weight: bold;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 0.3rem;
+    color: var(--text);
+    margin-bottom: 0.4rem;
+  }
+  .pub-note .pub-title {
+    font-weight: bold;
+    color: var(--text);
   }
 
   /* IDEAS */
@@ -410,17 +415,21 @@
   <!-- TOP SECTION -->
   <div class="top">
     <div class="top-photo">
-      <img src="photo.jpg" alt="Seorhin Choi">
+      <img src="main.jpg" alt="Seorhin Choi">
     </div>
     <div class="top-right">
       <h1>Seorhin Choi</h1>
       <p class="affil">M.S. Researcher · IBS Center for Quantum Nanoscience · Seoul</p>
       <div class="intro">
         <p>I am an M.S. researcher at IBS Center for Quantum Nanoscience, Seoul,
-        working on lanthanide atoms on surfaces. My work centers on multiplet
-        calculations and modeling to interpret XAS/XMCD and ESR-STM data,
-        and I am gradually expanding my interests toward lanthanide-based quantum
-        materials through beamtime experiments.</p>
+        working on lanthanide atoms on surfaces as candidates for atomic-scale spin
+        qubits. My work sits between experiment and theory: I build multiplet and
+        crystal-field models in Quanty and fit them to XAS/XMCD and ESR-STM data
+        with Bayesian optimization.</p>
+        <p>Alongside this, I take part in synchrotron beamtime experiments including
+        a measurement of frustrated magnetic systems and my interests have gradually
+        broadened from single-atom qubits toward quantum magnetic materials more
+        generally.</p>
         <p>I also care about what happens outside the lab — science outreach,
         philosophy of physics, and finding ways to connect physics to people
         who aren't already inside it.</p>
@@ -450,7 +459,7 @@
           <div class="card" onclick="openModal('synchrotron')">
             <img class="card-thumb" src="synchrotron.png" alt="Synchrotron experiments">
             <div class="card-info">
-              <span class="card-title">Beamtime experiments</span>
+              <span class="card-title">Synchrotron experiments</span>
               <span class="card-sub">XAS/XMCD · SOLEIL · Pohang Light Source</span>
             </div>
           </div>
@@ -488,18 +497,18 @@
               <span class="card-sub">Session moderator · IBS STM'25</span>
             </div>
           </div>
-          <div class="card" onclick="openModal('phil')">
-            <div class="card-text-thumb">∮</div>
+          <div class="card" onclick="openModal('anyons')">
+            <img class="card-thumb" src="anyon.jpg" alt="Philosophy of anyons">
             <div class="card-info">
-              <span class="card-title">Philosophy of physics</span>
-              <span class="card-sub">Anyon braiding · Time and Chance translation</span>
+              <span class="card-title">Philosophy of anyons</span>
+              <span class="card-sub">Synchronic states vs. exchange paths</span>
             </div>
           </div>
-          <div class="card" onclick="openModal('art')">
-            <div class="card-text-thumb">🎨</div>
+          <div class="card" onclick="openModal('translation')">
+            <img class="card-thumb" src="time.jpg" alt="Time and Chance translation">
             <div class="card-info">
-              <span class="card-title">Quantum coherence art</span>
-              <span class="card-sub">Installation · East Asian ink painting · In progress</span>
+              <span class="card-title">Time and Chance translation</span>
+              <span class="card-sub">David Albert · Korean edition · Scientific consultant</span>
             </div>
           </div>
         </div>
@@ -513,6 +522,11 @@
         <ul class="plain-list">
           <li>
             <span class="badge">Oral</span>
+            From states to paths: anyon braiding and the limits of state-based analysis
+            <span class="venue">Korean Society for Philosophy of Science · July 2026</span>
+          </li>
+          <li>
+            <span class="badge">Oral</span>
             Identifying the quantum level structure of Er atoms on MgO using machine learning-assisted multiplet calculations
             <span class="venue">KPS Spring Meeting, Daejeon · April 2026</span>
           </li>
@@ -521,17 +535,12 @@
             Identifying the quantum level structure of Er atoms on MgO using machine learning-assisted multiplet calculations
             <span class="venue">ICAE 2025, Jeju · November 2025</span>
           </li>
-          <li>
-            <span class="badge">Upcoming</span>
-            From states to paths: anyon braiding and the limits of state-based analysis
-            <span class="venue">Korean Society for Philosophy of Science · July 2026</span>
-          </li>
         </ul>
         <div class="pub-note">
           <div class="pub-label">Publication</div>
           Yaowu Liu*, Dasom Choi*, Stefano Reale, Jeongmin Oh, <strong>Seorhin Choi</strong>,
           Fang Lei, We-hyo Seo, Arzhang Ardavan, Andreas J. Heinrich, Soo-hyon Phark, and Fabio Donati.
-          "All-electrical coherent control of a single 4f electron spin."
+          <span class="pub-title">"All-electrical coherent control of a single 4f electron spin."</span>
           <em>Submitted (2026).</em>
         </div>
       </div>
@@ -580,48 +589,53 @@ const modals = {
       <p>Lanthanide atoms on surfaces are promising candidates for atomic-scale qubits:
       their 4f electrons are well shielded, giving them long coherence times,
       and modern scanning probe techniques let us address individual atoms directly.
-      But to use these systems deliberately, we need to understand precisely
-      <em>what quantum states they occupy</em> — and that turns out to be harder than it looks.</p>
-      <p>My main project focuses on Er atoms on MgO. The conventional point-charge model
-      worked for the oxygen top site but failed badly for the bridge site — the predicted
-      magnetic anisotropy was inverted, and ESR-STM showed a fast Rabi frequency where
-      the model predicted driving should be difficult.
-      I extended the model by introducing partially occupied 5d configurations and used
-      Bayesian optimization to fit the parameters to experimental g-tensor values.
-      The new model correctly reproduces the magnetic anisotropy and the conditions for ESR driving.</p>
-      <p>I am now extending this approach to other lanthanides — Ho, Tm, and Dy.</p>`
+      But using these systems deliberately requires knowing precisely
+      <em>what quantum states they occupy</em> — and the standard model for that turns out
+      to be wrong in an interesting way.</p>
+      <p>My project centers on Er at the bridge adsorption site on MgO. The point-charge
+      crystal-field model that works well at the oxygen-top site gets this site backwards:
+      it predicts an in-plane easy axis, while ESR-STM measures a large out-of-plane
+      g-factor (g<sub>zz</sub> ≈ 9.6). I built a hierarchy of three multiplet models in
+      <strong>Quanty</strong> to find out why. Refitting the point-charge model's own
+      parameters with <strong>Bayesian optimization</strong> against the measured g-factor
+      only converges by pushing them to unphysical limits — evidence that the model itself,
+      not just its parameters, is missing something. I then extended it by introducing
+      partial 5d occupation on the adatom: first through hopping to an open ligand bath,
+      then through a charge-conserving 4f+5d+6s active space.</p>
+      <p>With that model, the predicted easy-axis flips from in-plane to out-of-plane, correctly reproducing both the measured g-tensor and a normal-incidence
+      XMCD signal the original model had underestimated. I am now extending the same
+      three-model framework to Ho, Tm, and Dy.</p>`
   },
   synchrotron: {
     img: 'synchrotron.png',
     tag: 'Current · SOLEIL · Pohang Light Source',
-    title: 'Synchrotron experiments on lanthanide-based quantum materials',
+    title: 'Synchrotron experiments',
     body: `
       <p>Alongside the MgO project, I take part in several synchrotron beamtime experiments
-      using XAS and XMCD to probe the magnetic and electronic structure of lanthanide-based materials.</p>
+      using XAS and XMCD.</p>
       <p>One ongoing campaign focuses on valence-electron magnetism in lanthanide atoms on
       superconductors, where I am analyzing the data using sum rules to investigate how
       coupling to Cooper pairs affects the lanthanide's magnetic state.</p>
-      <p>I have also participated in experiments probing the crystal-field structure of
-      Kagome spin ice in HoAgGe, and in a measurement of element-specific spin polarization
+      <p>I have also participated in experiments studying Kagome spin ice in HoAgGe, and in a measurement of element-specific spin polarization
       in Co₁/₃TaS₂.</p>`
   },
   anyons: {
-    img: null,
+    img: 'anyon.jpg',
     tag: 'Philosophy of physics',
     title: 'From states to paths: anyon exchange and the limits of synchronic analysis',
     body: `
-      <p>Is analyzing the physical world through synchronic states —
+      <p>Is analyzing the exchange invariance and identities through synchronic states —
       snapshots assigned to moments in time — a sufficient foundational strategy?
       The case of anyons puts pressure on that assumption. Two exchange processes can share
       identical initial and final states, yet differ in physical outcome because their
       trajectories in configuration space belong to different homotopy classes.
       The difference that matters is not captured by any synchronic state description;
-      it lives in the global topological structure of worldlines across time.</p>
-      <p>This suggests that trajectories, rather than states, may need to serve as the
+      it lives in the global topological structure.</p>
+      <p>This suggests that paths, rather than states, may need to serve as the
       basic unit of analysis — and that taking this seriously also makes dimensionality
       a physically substantive parameter, since the homotopy structure of exchange paths
       is dimension-dependent.</p>
-      <p>Upcoming presentation at the Korean Society for Philosophy of Science, July 2026.</p>`
+      <p>Presented at the Korean Society for Philosophy of Science, July 2026.</p>`
   },
   games: {
     img: 'stm_monopoly.png',
@@ -647,15 +661,6 @@ const modals = {
           <figcaption>Schrödinger's Cat Party — character art</figcaption>
         </figure>
       </div>`
-  },
-  art: {
-    img: null,
-    tag: 'Science communication · In progress',
-    title: 'Quantum coherence — installation and ink painting',
-    body: `
-      <p>A work in progress exploring quantum coherence through installation art
-      and traditional East Asian ink painting.</p>
-      <p>More soon.</p>`
   },
   stm: {
     img: null,
@@ -698,24 +703,15 @@ const modals = {
         </figure>
       </div>`
   },
-  phil: {
-    img: null,
-    tag: 'Philosophy of physics',
-    title: 'Thinking at the boundary of physics and philosophy',
+  translation: {
+    img: 'time.jpg',
+    tag: 'Philosophy of physics · Scientific consultant',
+    title: 'Korean translation of David Albert\'s Time and Chance',
     body: `
-      <p>My interest in the foundations of quantum mechanics grew out of studying physics
-      and philosophy together at Ewha. I am drawn to questions that sit at the boundary —
-      where the formalism of physics runs into problems that are genuinely philosophical.</p>
-      <p>I am currently preparing a talk for the Korean Society for Philosophy of Science
-      on anyon exchange and whether synchronic state descriptions are sufficient to capture
-      all physical facts. Two exchange processes can share identical initial and final states,
-      yet differ in outcome because their trajectories in configuration space belong to
-      different homotopy classes — a difference no state-based description can capture.
-      This suggests trajectories, rather than states, may need to serve as the basic unit
-      of analysis, and makes dimensionality a physically substantive parameter.</p>
-      <p>I am also contributing to the Korean translation of David Albert's
-      <em>Time and Chance</em> as a scientific consultant, helping bridge the gap between
-      the physics and the philosophical argument in the text.</p>`
+      <p>I am contributing to the Korean translation of David Albert's <em>Time and Chance</em>
+      as a scientific consultant, working to keep the physics precise while the philosophical
+      argument survives translation — checking that technical terms carry the right meaning
+      in Korean and that the physics underlying each argument is stated correctly.</p>`
   },
   women: {
     img: 'women_in_science.jpg',
